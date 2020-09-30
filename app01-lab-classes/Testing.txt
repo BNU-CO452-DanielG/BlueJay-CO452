@@ -1,0 +1,5 @@
+Danny, student ID: 098765, credits: 0
+Danny, student ID: 098765, credits: 340
+dannyGrace.addCredits(50);
+dannyGrace.print();
+Danny, student ID: 098765, credits: 390
