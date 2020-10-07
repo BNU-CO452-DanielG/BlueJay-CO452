@@ -1,5 +1,4 @@
 import java.util.*;
-
 /**
  * The Student class represents a student in a student administration system.
  * It holds the student details relevant in our context.
@@ -16,14 +15,17 @@ public class Student
     private String id;
     // the amount of credits for study taken so far
     private int credits;
+    // the lecture of student
+    private String lecture;
     
     /**
      * Create a new student with a given name and ID number.
      */
-    public Student(String fullName, String studentID)
+    public Student(String fullName, String studentID, String room)
     {
         name = fullName;
         id = studentID;
+        lecture = room;
         credits = 0;
     }
 
@@ -34,6 +36,12 @@ public class Student
     {
         return name;
     }
+    
+    public String getLecture()
+    {
+        return lecture;
+    }
+        
 
     /**
      * Set a new name for this student.
@@ -83,6 +91,6 @@ public class Student
      */
     public void print()
     {
-        System.out.println(name + ", student ID: " + id + ", credits: " + credits);
+        System.out.println(name + ", student ID: " + id + ", your lecture is: " + lecture + ", your credits are: " + credits);
     }
 }
