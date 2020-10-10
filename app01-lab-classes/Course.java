@@ -1,14 +1,31 @@
-
 /**
- * Write a description of class Course here.
+ * This class will store inforemation on student's classes and
+ * numbers.
  *
- * @author (your name)
- * @version (a version number or a date)
+ * @author Daniel Grace
  */
 public class Course
 {
-    public void Lecture(String className)
+    // Attributes/Variables/Fields
+    private String title;
+    
+    private String codeNo;
+    
+    /**
+     * Constructor for objects of class Course it
+     * stores the title and the code no
+     */
+    public Course(String title, String codeNo)
     {
-        className = "D124, Computing.";
+        this.title = title;
+        this.codeNo = codeNo;
+    }
+    
+    /**
+     * This will pint out the title and codeNo
+     */
+    public void print()
+    {
+        System.out.println("Course: " + title + " " + codeNo);
     }
 }

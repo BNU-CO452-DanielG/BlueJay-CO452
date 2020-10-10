@@ -1,32 +1,30 @@
-LabClass labClass1 = new LabClass(3);
-labClass1.numberOfStudents()
+LabClass labClass2 = new LabClass(3);
+LabClass co452Lab = new LabClass(3);
+co452Lab.setInstructor("Nicholas Day");
+co452Lab.setRoom("room G100");
+co452Lab.setTime("Tuesday 29th September 2020");
+Student studentDanny = new Student("Danny", "203456");
+Student studentSause = new Student("Sause", "093562");
+Student studentKira = new Student("Kira", "562710");
+studentDanny.getCredits()
     returned int 0
-labClass1.setInstructor("Jake Wellings");
-labClass1.setRoom("F4R2");
-labClass1.setTime("Tuesday, 2PM");
-Student studentDanny = new Student("Danny", "4065", "F4R2");
-Student studentLily = new Student("Lily", "62762", "F4R2");
-Student kiraStudent = new Student("Kira", "5423", "F4R2");
-labClass1.enrollStudent(studentDanny);
-labClass1.enrollStudent(studentLily);
-Student studentKira = new Student("Kira", "04982", "F4R2");
-labClass1.enrollStudent(studentKira);
-labClass1.printList();
-Lab class Tuesday, 2PM
-Instructor: Jake Wellings   Room: F4R2
+studentDanny.addCredits(20);
+studentSause.changeName("Sauze");
+Course courseComputing = new Course("G400, Computing", "03652");
+co452Lab.enrollStudent(studentDanny);
+co452Lab.enrollStudent(studentSause);
+co452Lab.enrollStudent(studentKira);
+studentDanny.enrolOnCourse(courseComputing);
+studentSause.enrolOnCourse(courseComputing);
+studentKira.enrolOnCourse(courseComputing);
+co452Lab.printList();
+Lab class Tuesday 29th September 2020
+Instructor: Nicholas Day   Room: room G100
 Class list:
-Danny, student ID: 4065, your lecture is: F4R2, your credits are: 0
-Lily, student ID: 62762, your lecture is: F4R2, your credits are: 0
-Kira, student ID: 04982, your lecture is: F4R2, your credits are: 0
-Number of students: 3
-studentDanny.addCredits(1000);
-studentLily.addCredits(500);
-studentKira.addCredits(167);
-labClass1.printList();
-Lab class Tuesday, 2PM
-Instructor: Jake Wellings   Room: F4R2
-Class list:
-Danny, student ID: 4065, your lecture is: F4R2, your credits are: 1000
-Lily, student ID: 62762, your lecture is: F4R2, your credits are: 500
-Kira, student ID: 04982, your lecture is: F4R2, your credits are: 167
+Danny, student ID: 203456, credits: 20
+Course: G400, Computing 03652
+Sauze, student ID: 093562, credits: 0
+Course: G400, Computing 03652
+Kira, student ID: 562710, credits: 0
+Course: G400, Computing 03652
 Number of students: 3
