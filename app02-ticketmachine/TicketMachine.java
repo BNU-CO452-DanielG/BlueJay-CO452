@@ -9,7 +9,7 @@
  * @author David J. Barnes and Michael Kölling
  * @version 2016.02.29
  * 
- * Modified by Student Name
+ * Modified by Daniel Grace
  */
 public class TicketMachine
 {
@@ -17,9 +17,6 @@ public class TicketMachine
     private int price;
     // The amount of money entered by a customer so far.
     private int balance;
-    // The total amount of money collected by this machine.
-    private int total;
-
     /**
      * Create a machine that issues tickets of the given price.
      */
@@ -27,7 +24,6 @@ public class TicketMachine
     {
         price = cost;
         balance = 0;
-        total = 0;
     }
 
     /**
@@ -80,9 +76,7 @@ public class TicketMachine
             System.out.println("# " + price + " cents.");
             System.out.println("##################");
             System.out.println();
-
-            // Update the total collected with the price.
-            total = total + price;
+            
             // Reduce the balance by the price.
             balance = balance - price;
         }
