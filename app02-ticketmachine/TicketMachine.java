@@ -63,15 +63,28 @@ public class TicketMachine
         highWycombeTicket.PrintTicketInfo();
     }
     
-    /**
+     /**
      * Print a ticket if enough money has been inserted, and
      * reduce the current balance by the ticket price. Print
      * an error message if more money is required.
      */
-    public void printTicket()
+    public void buyticket(String destination)
     {
-        
-        
+        if (destination.equals("Aylesbury"))
+        {
+            if (balance < 220)
+            {
+                System.out.println("Insert: " + (220 - balance) + "p");
+            }
+            else
+            {
+            System.out.println("Payment recieved.");
+            System.out.println("Please take your ticket:");
+            aylesburyTicket.PrintTicket();
+            balance = balance - 220;
+            System.out.println("   Your refund is: " + balance + "p");
+            }
+        }
     }
 
     /**
