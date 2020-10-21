@@ -1,0 +1,88 @@
+TicketMachine ticketMa1 = new TicketMachine();
+ticketMa1.printAllTickets();
+Our avaliable tickets are: 
+                           
+The Amersham ticket: 
+------------------------
+Ticket: Amersham
+Price: 300
+------------------------
+                         
+The Aylesbury ticket: 
+------------------------
+Ticket: Aylesbury
+Price: 220
+------------------------
+                         
+The High Wycombe ticket: 
+------------------------
+Ticket: High Wycombe
+Price: 330
+------------------------
+                         
+ticketMa1.addCoin(Coin.P200);
+You have inserted: P200
+Your balance is: 200p
+ticketMa1.buyticket("Aylesbury");
+Insert: 20p
+ticketMa1.addCoin(Coin.P20);
+You have inserted: P20
+Your balance is: 220p
+ticketMa1.buyticket("Aylesbury");
+Payment recieved.
+Please take your ticket:
+   Ticket: Aylesbury
+   Price: 220
+   Issued: Wed Oct 21 13:46:24 BST 2020
+   Your refund is: 0p
+ticketMa1.addCoin(Coin.P200);
+You have inserted: P200
+Your balance is: 200p
+ticketMa1.refundBalance();
+You have been refunded: 200p
+ticketMa1.addCoin(Coin.P200);
+You have inserted: P200
+Your balance is: 200p
+ticketMa1.addCoin(Coin.P100);
+You have inserted: P100
+Your balance is: 300p
+ticketMa1.addCoin(Coin.P10);
+You have inserted: P10
+Your balance is: 310p
+ticketMa1.addCoin(Coin.P20);
+You have inserted: P20
+Your balance is: 330p
+ticketMa1.buyticket("High Wycombe");
+Payment recieved.
+Please take your ticket:
+   Ticket: High Wycombe
+   Price: 330
+   Issued: Wed Oct 21 13:46:24 BST 2020
+   Your refund is: 0p
+ticketMa1.addCoin(Coin.P200);
+You have inserted: P200
+Your balance is: 200p
+ticketMa1.addCoin(Coin.P20);
+You have inserted: P20
+Your balance is: 220p
+ticketMa1.buyticket("Amersham");
+Insert: 80p
+ticketMa1.addCoin(Coin.P20);
+You have inserted: P20
+Your balance is: 240p
+ticketMa1.addCoin(Coin.P20);
+You have inserted: P20
+Your balance is: 260p
+ticketMa1.addCoin(Coin.P20);
+You have inserted: P20
+Your balance is: 280p
+ticketMa1.addCoin(Coin.P20);
+You have inserted: P20
+Your balance is: 300p
+ticketMa1.buyticket("Amersham");
+Payment recieved.
+Please take your ticket:
+   Ticket: Amersham
+   Price: 300
+   Issued: Wed Oct 21 13:46:24 BST 2020
+   Your refund is: 0p

@@ -16,6 +16,12 @@ public class Student
     // the amount of credits for study taken so far
     private int credits;
     
+    public Course englishCourse = new Course ("English", "2304", "70%");
+    
+    public void PrintCourses()
+    {
+        englishCourse.courseDetails();
+    }
     /**
      * Create a new student with a given name and ID number.
      */

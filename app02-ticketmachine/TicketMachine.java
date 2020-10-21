@@ -35,20 +35,14 @@ public class TicketMachine
         balance = 0;
     }
     
+    /**
+     * Please add coins using Coin.P (eg: Coin.P200 for 200p)
+     */
     public void addCoin(Coin coin)
     {
         System.out.println("You have inserted: " + coin);
         balance = balance + coin.getValue();
         System.out.println("Your balance is: " + balance + "p");
-    }
-
-    /**
-     * Return The amount of money already inserted for the
-     * next ticket.
-     */
-    public int getBalance()
-    {
-        return balance;
     }
 
     public void printAllTickets()
@@ -64,9 +58,8 @@ public class TicketMachine
     }
     
      /**
-     * Print a ticket if enough money has been inserted, and
-     * reduce the current balance by the ticket price. Print
-     * an error message if more money is required.
+      * Choose a destination, and if balance is greater than price
+      * then buy the ticket, otherwise insert amount required.
      */
     public void buyticket(String destination)
     {
@@ -85,7 +78,38 @@ public class TicketMachine
             System.out.println("   Your refund is: " + balance + "p");
             }
         }
-    }
+        
+        else if(destination.equals("Amersham"))
+        {
+            if (balance < 300)
+            {
+                System.out.println("Insert: " + (300 - balance) + "p");
+            }
+            else
+            {
+            System.out.println("Payment recieved.");
+            System.out.println("Please take your ticket:");
+            amershamTicket.PrintTicket();
+            balance = balance - 300;
+            System.out.println("   Your refund is: " + balance + "p");
+            }
+        }
+        else if(destination.equals("High Wycombe"))
+        {
+            if (balance < 330)
+            {
+                System.out.println("Insert: " + (330 - balance) + "p");
+            }
+            else
+            {
+            System.out.println("Payment recieved.");
+            System.out.println("Please take your ticket:");
+            highWycombeTicket.PrintTicket();
+            balance = balance - 330;
+            System.out.println("   Your refund is: " + balance + "p");
+            }
+        }
+        }
 
     /**
      * Return the money in the balance.
