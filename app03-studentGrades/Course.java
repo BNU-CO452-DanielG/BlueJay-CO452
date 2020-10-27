@@ -1,4 +1,6 @@
-
+import java.util.ArrayList;
+import java.util.Collections;
+import java.util.List;
 /**
  * Write a description of class Course here.
  *
@@ -8,20 +10,20 @@
 public class Course
 {
     private String courseName;
-    private String moduleCode;
-    private String percentageMark;
+    private String courseCode;
+    private int marks = 0;
     
-    public Course(String courseName, String moduleCode, String percentageMark)
+    private Module module1;
+    private Module module2;
+    private Module module3;
+    private Module module4;
+    
+    public Course(String courseName, String moduleCode)
     {
         this.courseName = courseName;
-        this.moduleCode = moduleCode;
-        this.percentageMark = percentageMark;
-    }
-    
-    public void courseDetails()
-    {
-        System.out.println("Your course is: " + courseName);
-        System.out.println("Your module code is: " + moduleCode);
+        this.courseCode = courseCode;
+        
+        module1 = new Module("Computing", "50302");
     }
 }
 

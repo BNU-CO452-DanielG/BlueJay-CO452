@@ -7,17 +7,26 @@
  */
 public class Module
 {
-    private String moduleTitile;
+    private String moduleTitle;
     private String moduleCode;
-    private String modulePercentage;
+    private int mark = 0;
     
-    public void grade(String modulePercentage)
+    public Module(String moduleTitle, String moduleCode)
     {
-        this.modulePercentage = modulePercentage;
+        this.moduleTitle = moduleTitle;
+        this.moduleCode = moduleCode;
     }
     
-    public void printGrade()
+    public void awardMark(int mark)
     {
-        System.out.println("Your grade is: " + modulePercentage);
+        if((mark >= 0) && (mark <= 100))
+        {
+          this.mark = mark;
+        }
+        else
+        {
+            System.out.println("This value is invalid!!");
+        }
     }
+    
 }
