@@ -1,20 +1,20 @@
 
 /**
- * Write a description of class Module here.
+ * This class is the basis for the modules, creating a title and assigning the mark.
  *
- * @author (your name)
- * @version (a version number or a date)
+ * @Daniel Grace
+ * 
  */
 public class Module
 {
     private String moduleTitle;
     private String moduleCode;
-    private int mark = 0;
+    public int mark = 0;
     
     public Module(String moduleTitle, String moduleCode)
     {
         this.moduleTitle = moduleTitle;
-        this.moduleCode = moduleCode;
+         this.moduleCode = moduleCode;
     }
     
     public void awardMark(int mark)
@@ -27,6 +27,12 @@ public class Module
         {
             System.out.println("This value is invalid!!");
         }
+    }
+    
+     public void printDetails()
+    {
+        System.out.println("This module is: " + moduleTitle);
+        System.out.println("The module code is: " + moduleCode);
     }
     
 }

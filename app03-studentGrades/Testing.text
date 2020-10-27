@@ -1,0 +1,32 @@
+Student danielStuden = new Student("Daniel Grace", "73201");
+Course computingCourse = new Course("Computing", "40231");
+danielStuden.enrollOnCourse(computingCourse);
+danielStuden.getCredits()
+    returned int 0
+danielStuden.addCredits(60);
+computingCourse.addMark(80, 1);
+computingCourse.addMark(40, 2);
+computingCourse.addMark(76, 3);
+computingCourse.addMark(69, 4);
+computingCourse.calcuateFinalMark();
+Your marks  Computing, 40231 are: 265.0
+Your course percentage is: 66.0%
+computingCourse.convertToGrade()
+    returned Object B
+computingCourse.printFinalGrade();
+Your final grade for Computing, 40231 is: B
+computingCourse.printCourseDetails();
+You are on the course: Computing, 40231
+computingCourse.printModuleDetails();
+       
+This module is: Web Design
+The module code is: 50302
+       
+This module is: Programming Concepts
+The module code is: 30523
+       
+This module is: User Experience
+The module code is: 60231
+       
+This module is: Video Editing
+The module code is: 76012

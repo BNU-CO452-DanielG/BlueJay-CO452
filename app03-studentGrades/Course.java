@@ -1,29 +1,135 @@
-import java.util.ArrayList;
-import java.util.Collections;
-import java.util.List;
 /**
- * Write a description of class Course here.
- *
- * @author (your name)
- * @version (a version number or a date)
+ * This is the course class which adds the modules, grades and calculates the final mark
+ * @Daniel Grace
  */
 public class Course
 {
+    //Course names and numbers
     private String courseName;
     private String courseCode;
-    private int marks = 0;
     
+    //Create new modules
     private Module module1;
     private Module module2;
     private Module module3;
     private Module module4;
     
-    public Course(String courseName, String moduleCode)
+    //Final module mark / 100 to module percentage
+    private double finalMark;
+    private double finalGrade;
+    
+    //Enum for final grades  
+    private Grades gradeLetter;
+    private String studentGrade;
+    
+    public Course(String courseName, String courseCode)
     {
         this.courseName = courseName;
         this.courseCode = courseCode;
-        
-        module1 = new Module("Computing", "50302");
+        module1 = new Module("Web Design", "50302");
+        module2 = new Module("Programming Concepts", "30523");
+        module3 = new Module("User Experience", "60231");
+        module4 = new Module("Video Editing" , "76012");
+    }
+    
+     /**
+     * Add marks to the modules above, if it doesn't exist
+     * an error message is displayed.
+     */
+    public void addMark(int mark, int moduleCode)
+    {
+        if(moduleCode == 1)
+        {
+            module1.awardMark(mark);
+        }
+        else if(moduleCode == 2)
+        {
+            module2.awardMark(mark);
+        }
+        else if(moduleCode == 3)
+        {
+            module3.awardMark(mark);
+        }
+        else if(moduleCode == 4)
+        {
+            module4.awardMark(mark);
+        }
+        else
+        {
+            System.out.println("Please input a valid module code!!");
+        }
+    }
+    
+    /**
+     * Marks from each module are added, then turned into a
+     * percentage and then displayed back to the user.
+     */  
+    public void calcuateFinalMark()
+    {
+        finalMark = module1.mark + module2.mark + module3.mark + module4.mark;
+        finalGrade = Math.round((finalMark / 400) * 100);
+        System.out.println("Your marks  "  + courseName + ", " + courseCode + " are: " + finalMark);
+        System.out.println("Your course percentage is: " + finalGrade + "%");
+    }
+    
+    /**
+     * Depending on the final grade the student will be placed
+     * into the appropriate grade group.
+     */
+    public Grades convertToGrade()
+    {
+        if((finalGrade >= 0) && (finalGrade < 40))
+        {
+            studentGrade = ("F");
+            return Grades.F;
+        }
+        else if((finalGrade >= 40) && (finalGrade <= 49))
+        {
+            studentGrade = ("D");
+            return Grades.D;
+        }
+        else if((finalGrade >= 50) && (finalGrade <= 59))
+        {
+            studentGrade = ("C");
+            return Grades.C;
+        }
+        else if((finalGrade >= 60) && (finalGrade <= 69))
+        {
+            studentGrade = ("B");
+            return Grades.B;
+        }
+        else if ((finalGrade>= 70))
+        {
+            studentGrade = ("A");
+            return Grades.A;
+        }
+        else
+        {
+            studentGrade = ("X");
+            return Grades.X;
+        }
+    }
+    
+    public void printCourseDetails()
+    {
+        System.out.println("You are on the course: " + courseName + ", " + courseCode);
+    }
+    
+    public void printModuleDetails()
+    {
+        System.out.println("       ");
+        module1.printDetails();
+        System.out.println("       ");
+        module2.printDetails();
+        System.out.println("       ");
+        module3.printDetails();
+        System.out.println("       ");
+        module4.printDetails();
+    }
+    
+    public void printFinalGrade()
+    {
+        System.out.println("Your final grade for " + courseName + (", ") + courseCode + (" is: ") + studentGrade);
     }
 }
 

@@ -6,6 +6,7 @@ import java.util.*;
  * 
  * @author Michael Kölling and David Barnes
  * @version 2016.02.29
+ * Modified by: Daniel Grace
  */
 public class Student
 {
@@ -18,7 +19,7 @@ public class Student
     
     private Course course;
     
-       public void enrollOnCourse()
+       public void enrollOnCourse(Course course)
     {
         this.course = course;
     }
