@@ -1,12 +1,12 @@
 #BlueJ package file
-dependency1.from=Student
-dependency1.to=Course
+dependency1.from=Course
+dependency1.to=Module
 dependency1.type=UsesDependency
 dependency2.from=Course
-dependency2.to=Module
+dependency2.to=Grades
 dependency2.type=UsesDependency
-dependency3.from=Course
-dependency3.to=Grades
+dependency3.from=Student
+dependency3.to=Course
 dependency3.type=UsesDependency
 editor.fx.0.height=1056
 editor.fx.0.width=1936
@@ -38,7 +38,7 @@ target1.showInterface=false
 target1.type=EnumTarget
 target1.width=80
 target1.x=310
-target1.y=30
+target1.y=10
 target2.height=50
 target2.name=Course
 target2.showInterface=false

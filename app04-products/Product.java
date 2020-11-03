@@ -3,6 +3,7 @@
  * 
  * @author David J. Barnes and Michael Kölling.
  * @version 2016.02.29
+ * @modified Daniel Grace
  */
 public class Product
 {
@@ -57,6 +58,11 @@ public class Product
     {
         return id + ": " +  name + " stock level: " + quantity;
     }
+    
+    public void replaceName(String replacementName)
+    {
+        name = replacementName;
+    }
 
     /**
      * Restock with the given amount of this product.
@@ -81,11 +87,11 @@ public class Product
      * Sell one of these products.
      * An error is reported if there appears to be no stock.
      */
-    public void sellOne()
+    public void sellQuantity(int amount)
     {
         if(quantity > 0) 
         {
-            quantity--;
+            quantity = quantity - amount;
         }
         else 
         {

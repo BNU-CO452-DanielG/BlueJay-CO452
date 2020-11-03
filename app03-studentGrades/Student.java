@@ -18,8 +18,14 @@ public class Student
     private int credits;
     
     private Course course;
+    private Course completionPoints;
     
-       public void enrollOnCourse(Course course)
+    public void totalCredits()
+    {
+        System.out.println(completionPoints);
+    }
+    
+    public void enrollOnCourse(Course course)
     {
         this.course = course;
     }
@@ -65,9 +71,8 @@ public class Student
     {
         credits += additionalPoints;
     }
-
-    
-    /**
+     
+     /**
      * Return the number of credit points this student has accumulated.
      */
     public int getCredits()

@@ -1,4 +1,3 @@
-
 /**
  * This class is the basis for the modules, creating a title and assigning the mark.
  *
@@ -11,12 +10,20 @@ public class Module
     private String moduleCode;
     public int mark = 0;
     
-    public Module(String moduleTitle, String moduleCode)
+    /**
+     * Creates a module with a title and code.
+    */
+   public Module(String moduleTitle, String moduleCode)
     {
         this.moduleTitle = moduleTitle;
          this.moduleCode = moduleCode;
     }
     
+    
+    /**
+     * Checks if the mark is 0 through 100 and then gives the marks.
+     * If the value is not in this range a error is displayed.
+     */
     public void awardMark(int mark)
     {
         if((mark >= 0) && (mark <= 100))
@@ -29,10 +36,14 @@ public class Module
         }
     }
     
-     public void printDetails()
+     
+    /**
+     * Takes all modules and displays them. 
+     */
+    public void printDetails()
     {
-        System.out.println("This module is: " + moduleTitle);
-        System.out.println("The module code is: " + moduleCode);
+        System.out.print("The module code is: " + moduleCode);
+        System.out.println(" Title: " + moduleTitle + "\n");
     }
     
 }

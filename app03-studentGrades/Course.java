@@ -7,6 +7,8 @@ public class Course
     //Course names and numbers
     private String courseName;
     private String courseCode;
+    private int completedModule;
+    public int completionPoints;
     
     //Create new modules
     private Module module1;
@@ -22,37 +24,51 @@ public class Course
     private Grades gradeLetter;
     private String studentGrade;
     
+    
+    /**
+     * Sets the course name and code. Creates new modules.
+    */
     public Course(String courseName, String courseCode)
     {
         this.courseName = courseName;
         this.courseCode = courseCode;
-        module1 = new Module("Web Design", "50302");
-        module2 = new Module("Programming Concepts", "30523");
-        module3 = new Module("User Experience", "60231");
-        module4 = new Module("Video Editing" , "76012");
+        
+        module1 = new Module("Web Design", "1");
+        module2 = new Module("Programming Concepts", "2");
+        module3 = new Module("User Experience", "3");
+        module4 = new Module("Video Editing" , "4");
     }
+    
     
      /**
      * Add marks to the modules above, if it doesn't exist
      * an error message is displayed.
      */
-    public void addMark(int mark, int moduleCode)
+     public void addMark(int mark, int moduleCode)
     {
         if(moduleCode == 1)
         {
             module1.awardMark(mark);
+            this.completedModule = completedModule + 1;
+            this.completionPoints = completionPoints + 15;
         }
         else if(moduleCode == 2)
         {
             module2.awardMark(mark);
+            this.completedModule = completedModule + 1;
+            this.completionPoints = completionPoints + 15;
         }
         else if(moduleCode == 3)
         {
             module3.awardMark(mark);
+            this.completedModule = completedModule + 1;
+            this.completionPoints = completionPoints + 15;
         }
         else if(moduleCode == 4)
         {
             module4.awardMark(mark);
+            this.completedModule = completedModule + 1;
+            this.completionPoints = completionPoints + 15;
         }
         else
         {
@@ -66,13 +82,20 @@ public class Course
      */  
     public void calcuateFinalMark()
     {
-        finalMark = module1.mark + module2.mark + module3.mark + module4.mark;
+        if(completedModule == 4)
+        {
+        finalMark = completionPoints + module1.mark + module2.mark + module3.mark + module4.mark;
         finalGrade = Math.round((finalMark / 400) * 100);
         System.out.println("Your marks  "  + courseName + ", " + courseCode + " are: " + finalMark);
         System.out.println("Your course percentage is: " + finalGrade + "%");
+        } 
+        else
+        {
+            System.out.println("Please complete your modules first!");
+        }
     }
     
-    /**
+     /**
      * Depending on the final grade the student will be placed
      * into the appropriate grade group.
      */
@@ -110,26 +133,45 @@ public class Course
         }
     }
     
+    
+    /**
+     * Prints out the title of the course and the code
+     * for the course.
+     */
     public void printCourseDetails()
     {
         System.out.println("You are on the course: " + courseName + ", " + courseCode);
     }
     
+    /**
+     * Prints out the title of the module and the code
+     * for the module.
+     */
     public void printModuleDetails()
     {
-        System.out.println("       ");
+        System.out.println("Module list:      \n ");
         module1.printDetails();
+        
         System.out.println("       ");
         module2.printDetails();
+        
         System.out.println("       ");
         module3.printDetails();
+        
         System.out.println("       ");
         module4.printDetails();
     }
     
     public void printFinalGrade()
     {
-        System.out.println("Your final grade for " + courseName + (", ") + courseCode + (" is: ") + studentGrade);
+        if (completedModule >= 4)
+        {
+          System.out.println("Your final grade for " + courseName + (", ") + courseCode + (" is: ") + studentGrade);
+        }
+        else
+        {
+            System.out.println("You need to complete all modules!");
+        }
     }
 }
 

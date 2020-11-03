@@ -1,6 +1,6 @@
 
 /**
- * Enumeration class Grades - This is used for the final 
+ * Enumeration class Grades - This is used for the final grades of the students.
  *
  * @Daniel Grace
  */
