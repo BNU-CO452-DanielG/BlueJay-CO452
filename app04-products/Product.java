@@ -59,11 +59,31 @@ public class Product
         return id + ": " +  name + " stock level: " + quantity;
     }
     
+    /**
+     * Give replacement name.
+     */
     public void replaceName(String replacementName)
     {
         name = replacementName;
     }
-
+    
+    /**
+     * Checks if quantity is lower or equal to five.
+     */
+    public boolean checkAmount()
+    {
+        int low = 5;
+        
+        if(getQuantity() <= low)
+        {
+            return true;
+        }
+        else
+        {
+            return false;
+        }
+    }
+    
     /**
      * Restock with the given amount of this product.
      * The current quantity is incremented by the given amount.

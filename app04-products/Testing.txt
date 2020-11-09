@@ -1,0 +1,60 @@
+StockManager stockManager = new StockManager();
+StockDemo stockDemo = new StockDemo(stockManager);
+Product falloutFour = new Product(111, "Fallout 4");
+stockManager.addProduct(falloutFour);
+stockDemo.demoDeliever();
+Delievering:
+Prodcut Delievered: 100: World Of Warcraft stock level: 4
+Prodcut Delievered: 101: Final Fantasy 14 stock level: 2
+Prodcut Delievered: 102: Star Wars The Old Republic stock level: 2
+Prodcut Delievered: 103: Destiny 2 stock level: 6
+Prodcut Delievered: 104: Assassin's Creed stock level: 1
+Prodcut Delievered: 105: Grand Theft Auto 5 stock level: 7
+Prodcut Delievered: 106: Call Of Duty stock level: 4
+Prodcut Delievered: 107: Black Desert Online stock level: 1
+Prodcut Delievered: 108: NBA2k20 stock level: 3
+Prodcut Delievered: 109: Fifa 20 stock level: 5
+Prodcut Delievered: 110: Battlefield 4 stock level: 7
+stockManager.delivery(111, 9);
+Prodcut Delievered: 111: Fallout 4 stock level: 9
+stockManager.sellProduct(111, 3);
+111: Fallout 4 stock level: 9
+111: Fallout 4 stock level: 6
+stockManager.sellProduct(108, 3);
+108: NBA2k20 stock level: 3
+108: NBA2k20 stock level: 0
+stockManager.renameProduct(111, "Destiny 3");
+stockManager.printProduct(111);
+111: Destiny 3 stock level: 6
+stockManager.removeProduct(111);
+stockManager.printAllProducts();
+
+Grace's Stock List
+====================
+
+100: World Of Warcraft stock level: 4
+101: Final Fantasy 14 stock level: 2
+102: Star Wars The Old Republic stock level: 2
+103: Destiny 2 stock level: 6
+104: Assassin's Creed stock level: 1
+105: Grand Theft Auto 5 stock level: 7
+106: Call Of Duty stock level: 4
+107: Black Desert Online stock level: 1
+108: NBA2k20 stock level: 0
+109: Fifa 20 stock level: 5
+110: Battlefield 4 stock level: 7
+
+stockManager.productSearch("Star wars");
+102: Star Wars The Old Republic stock level: 2
+stockManager.productSearch("NBA");
+108: NBA2k20 stock level: 0
+stockManager.checkLowStock();
+The stock of the following products should be refilled
+100: World Of Warcraft stock level: 4
+101: Final Fantasy 14 stock level: 2
+102: Star Wars The Old Republic stock level: 2
+104: Assassin's Creed stock level: 1
+106: Call Of Duty stock level: 4
+107: Black Desert Online stock level: 1
+108: NBA2k20 stock level: 0
+109: Fifa 20 stock level: 5

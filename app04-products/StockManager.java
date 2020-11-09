@@ -1,5 +1,6 @@
-import java.util.ArrayList;
-
+import java.util.ArrayList; 
+import java.util.Arrays; 
+import java.util.List; 
 /**
  * Manage the stock in a business.
  * The stock is described by zero or more Products.
@@ -10,6 +11,9 @@ public class StockManager
 {
     // A list of the products.
     private ArrayList<Product> stock;
+    List <Product> listClone = new ArrayList<Product>();
+    
+    private String name;
     
     /**
      * Initialise the stock manager.
@@ -28,6 +32,9 @@ public class StockManager
         stock.add(item);
     }
     
+    /**
+     * Finds product and reeplaces the name. 
+     */
     public void renameProduct(int id, String replacementName)
     {
         Product product = findProduct(id);
@@ -38,6 +45,58 @@ public class StockManager
         else
         {
             System.out.println("Product not found!");
+        }
+    }
+    
+    /**
+     * If the check amount is true, add and print products.
+     * Validate and verifyLow are then ran.
+     */
+    public void checkLowStock()
+    {
+        listClone.clear();
+        
+        for (Product product : stock)
+        {
+            if (product.checkAmount() == true)
+            {
+                listClone.add(product);
+            }
+        }
+        
+        validate();
+        verifyLow();
+    }
+    
+    /**
+     * Checks the clone, if something's there returns true.
+     */
+    private boolean validate()
+    {
+        if (listClone.size() > 0)
+        {
+            return true;
+        }
+        else
+        {
+            return false;
+        }
+    }
+    
+    /**
+     * If the validate is true,print out list. 
+     */
+    private void verifyLow()
+    {
+        if (validate() == true)
+        {
+            System.out.println("The stock of the following products should be refilled");
+        
+            printClone();
+        }
+        else
+        {
+            System.out.println("The quantity of each product is at least 6");
         }
     }
     
@@ -61,6 +120,63 @@ public class StockManager
         }
     }
     
+    /**
+     * Allows the user to type in a string and find the 
+     * item they are looking for. If it exists, returns
+     * the product with stock.
+     */
+    public void productSearch(String name)
+    {
+        if(name.startsWith("World"))
+        {
+            System.out.println(stock.get(0));
+        }
+        if(name.startsWith("Final"))
+        {
+            System.out.println(stock.get(1));
+        }
+        if(name.startsWith("Star"))
+        {
+            System.out.println(stock.get(2));
+        }
+        if(name.startsWith("Destiny"))
+        {
+            System.out.println(stock.get(3));
+        }
+        if(name.startsWith("Assassin"))
+        {
+            System.out.println(stock.get(4));
+        }
+        if(name.startsWith("Grand"))
+        {
+            System.out.println(stock.get(5));
+        }
+        if(name.startsWith("Call"))
+        {
+            System.out.println(stock.get(6));
+        }
+        if(name.startsWith("Black"))
+        {
+            System.out.println(stock.get(7));
+        }
+        if(name.startsWith("NBA"))
+        {
+            System.out.println(stock.get(8));
+        }
+        if(name.startsWith("Fifa"))
+        {
+            System.out.println(stock.get(9));
+        }
+        if(name.startsWith("Battle"))
+        {
+            System.out.println(stock.get(10));
+        }
+    }
+    
+    /**
+     * Remove a product from the stock list.
+     *
+     */
     public void removeProduct(int id)
     {
         Product product = findProduct(id);
@@ -76,6 +192,9 @@ public class StockManager
         }
     } 
     
+    /**
+     * Takes an ID, checks if it exists and returns.
+     */
     public Product findProduct(int id)
     {
         for(Product product : stock)
@@ -104,19 +223,6 @@ public class StockManager
             printProduct(id);
         }
     }    
-   
-    
-     /**
-     * Locate a product with the given ID, and return how
-     * many of this item are in stock. If the ID does not
-     * match any product, return zero.
-     * @param id The ID of the product.
-     * @return The quantity of the given product in stock.
-     */
-    public int numberInStock(int id)
-    {
-        return 0;
-    }
 
     /**
      * Print details of the given product. If found,
@@ -140,7 +246,7 @@ public class StockManager
     public void printAllProducts()
     {
         System.out.println();
-        System.out.println("Peacock's Stock List");
+        System.out.println("Grace's Stock List");
         System.out.println("====================");
         System.out.println();
         
@@ -150,5 +256,16 @@ public class StockManager
         }
 
         System.out.println();
+    }
+    
+    /**
+     * Prints out the cloned list.
+     */
+    private void printClone()
+    {
+        listClone.forEach(product ->
+        {
+            System.out.println(product);
+        }); 
     }
 }
