@@ -20,6 +20,12 @@ public class StockApp
     
     private StockDemo oldStock;
     
+    private final int idLimit = 100;
+    private int idMax = 110;
+    
+    private int id = 0;
+    private String name;
+    
     /**
      * Constructor for objects of class StockApp
      */
@@ -29,9 +35,9 @@ public class StockApp
         manager = new StockManager();
         oldStock = new StockDemo(manager);
     }
-
+    
     /**
-     * 
+     * Prints out the heading and starts the program.
      */
     public void run()
     {
@@ -40,7 +46,8 @@ public class StockApp
     }
     
     /**
-     * 
+     * Prints out heading with choices, gets user input and converts to lower case.
+     * If the choice is quit, program finishes, otherwise executes the choice.
      */
     public void getMenuChoice()
     {
@@ -70,7 +77,7 @@ public class StockApp
         choice.toLowerCase();
         if(choice.equals ("add"))
         {
-            addProduct();
+            addProduct(id);
         }
         else if (choice.equals ("remove"))
         {
@@ -90,7 +97,7 @@ public class StockApp
         }
         else if (choice.equals ("search"))
         {
-            searchProduct();
+            searchProduct(name);
         }
         else if (choice.equals ("check"))
         {
@@ -98,11 +105,16 @@ public class StockApp
         }
         else if (choice.equals ("demo"))
         {
-            demoDeliever();
+            oldStock.demoDeliever();
         }
         else if (choice. equals ("restock"))
         {
             manager.refillStock();
+        }
+        else if (choice.equals("range"))
+        {
+            System.out.println("The lowest ID is: " + idLimit);
+            System.out.println("The highest ID is: " + idMax);
         }
     }
     
@@ -111,27 +123,27 @@ public class StockApp
         oldStock.demoDeliever();
     }
     
-    /**
+     /**
      * 
      */
-    private void addProduct()
+    private void addProduct(int id)
     {
-        System.out.println("\nAdding a new product!");
+        int newId;
+        String newName;
         
-        System.out.println("Please enter the ID: ");
-        String value = input.getInput();
-        int id = Integer.parseInt(value);
+        System.out.println("\nAdding a new product...");
+               
+        newId = createNewID();
+        newName = createNewName();
         
-        System.out.println("Please enter the name: ");
-        String name = input.getInput();
+        Product product = new Product(newId, newName);
         
-        Product product = new Product(id, name);
-        
+        idMax = idMax + 1;
         manager.addProduct(product);
     }
     
     /**
-     * 
+     * Gets the ID and takes out the product.
      */
     private void removeProduct()
     {
@@ -139,18 +151,55 @@ public class StockApp
         System.out.println("\nPlease enter the ID: ");
         String value = input.getInput();
         int id = Integer.parseInt(value);
-        
+        if (manager.findProduct(id) == null)
+        {
+            System.out.println("This product doesn't exist, please try again.");
+        }
+        idMax = idMax - 1;
         manager.removeProduct(id);
     }
     
-    private void searchProduct()
+    private void searchProduct(String name)
     {
-        System.out.println("Delivering a product:");
+        System.out.println("Searching for a product...");
         System.out.println("Please enter the name: ");
-        String product = input.getInput();
-        String name = product;
-
+        
+        name = input.getInput();
+        String product = name.toLowerCase();
+        
         manager.productSearch(product);
+        
+    }
+    
+    private Integer createNewID()
+    {
+        id = input.getInt();
+        while (manager.findProduct(id) != null)
+        {
+            System.out.println("\n The product is exists. Please choose another.");
+                
+            id = input.getInt();
+        }
+        
+        if(id < idLimit)
+        {
+            System.out.println("\n The ID is too small, please input one over 100...");
+            createNewID();
+        }
+                    
+        return id;
+    }
+    
+    private String createNewName()
+    {
+        name = input.getInput();
+        while(name.length() == 0)
+        {
+            System.out.println("\n Please write type a name..");
+            name = input.getInput();
+        }
+        System.out.println("\n Name has been accepted.");
+        return name;
     }
     
     private void delieverProduct()
@@ -194,6 +243,7 @@ public class StockApp
         System.out.println("    Demo        Demo buying a number of items");
         System.out.println("    Restock     Restock low items");
         System.out.println("    PrintAll:   Print all products");
+        System.out.println("    Range:      Check the range of ID's used");
         System.out.println("    Quit:       Quit the program");
         System.out.println();        
     }

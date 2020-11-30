@@ -127,47 +127,47 @@ public class StockManager
      */
     public void productSearch(String name)
     {
-        if(name.startsWith("Wo"))
+        if(name.startsWith("wo"))
         {
             System.out.println(stock.get(0));
         }
-        if(name.startsWith("Fi"))
+        if(name.startsWith("fi"))
         {
             System.out.println(stock.get(1));
         }
-        if(name.startsWith("St"))
+        if(name.startsWith("st"))
         {
             System.out.println(stock.get(2));
         }
-        if(name.startsWith("De"))
+        if(name.startsWith("de"))
         {
             System.out.println(stock.get(3));
         }
-        if(name.startsWith("As"))
+        if(name.startsWith("as"))
         {
             System.out.println(stock.get(4));
         }
-        if(name.startsWith("Gr"))
+        if(name.startsWith("gr"))
         {
             System.out.println(stock.get(5));
         }
-        if(name.startsWith("Ca"))
+        if(name.startsWith("ca"))
         {
             System.out.println(stock.get(6));
         }
-        if(name.startsWith("Bl"))
+        if(name.startsWith("bl"))
         {
             System.out.println(stock.get(7));
         }
-        if(name.startsWith("NB"))
+        if(name.startsWith("nb"))
         {
             System.out.println(stock.get(8));
         }
-        if(name.startsWith("Fifa"))
+        if(name.startsWith("fi"))
         {
             System.out.println(stock.get(9));
         }
-        if(name.startsWith("Ba"))
+        if(name.startsWith("ba"))
         {
             System.out.println(stock.get(10));
         }
