@@ -1,0 +1,200 @@
+    PrintAll:   Print all products
+    Range:      Check the range of ID's used
+    Quit:       Quit the program
+
+> check
+The stock of the following products should be refilled
+100: World Of Warcraft stock level: 5
+101: Final Fantasy 14 stock level: 3
+102: Star Wars The Old Republic stock level: 4
+104: Assassin's Creed stock level: 5
+105: Grand Theft Auto 5 stock level: 4
+106: Call Of Duty stock level: 4
+107: Black Desert Online stock level: 4
+108: NBA2k20 stock level: 4
+109: Fifa 20 stock level: 1
+110: Battlefield 4 stock level: 5
+
+******************************
+ Stock Management Application 
+    App05: by Daniel Grace
+******************************
+
+    Add:        Add a new product
+    Remove:     Remove an old product
+    Deliver:    Deliver prdoucts
+    Sell:       Sell products
+    Search:     Search for a product
+    Check       Check the stock of items
+    Demo        Demo buying a number of items
+    Restock     Restock low items
+    PrintAll:   Print all products
+    Range:      Check the range of ID's used
+    Quit:       Quit the program
+
+> quit
+Program.main();
+
+******************************
+ Stock Management Application 
+    App05: by Daniel Grace
+******************************
+
+    Add:        Add a new product
+    Remove:     Remove an old product
+    Deliver:    Deliver prdoucts
+    Sell:       Sell products
+    Search:     Search for a product
+    Check       Check the stock of items
+    Demo        Demo buying a number of items
+    Restock     Restock low items
+    PrintAll:   Print all products
+    Range:      Check the range of ID's used
+    Quit:       Quit the program
+
+> add
+
+Adding a new product...
+> 111
+
+Adding name of product...
+> NBA Jam
+
+ Name has been accepted.
+
+The product has been made!
+
+******************************
+ Stock Management Application 
+    App05: by Daniel Grace
+******************************
+
+    Add:        Add a new product
+    Remove:     Remove an old product
+    Deliver:    Deliver prdoucts
+    Sell:       Sell products
+    Search:     Search for a product
+    Check       Check the stock of items
+    Demo        Demo buying a number of items
+    Restock     Restock low items
+    PrintAll:   Print all products
+    Range:      Check the range of ID's used
+    Quit:       Quit the program
+
+> add
+
+Adding a new product...
+> 112
+
+Adding name of product...
+> Skyrim
+
+ Name has been accepted.
+
+The product has been made!
+
+******************************
+ Stock Management Application 
+    App05: by Daniel Grace
+******************************
+
+    Add:        Add a new product
+    Remove:     Remove an old product
+    Deliver:    Deliver prdoucts
+    Sell:       Sell products
+    Search:     Search for a product
+    Check       Check the stock of items
+    Demo        Demo buying a number of items
+    Restock     Restock low items
+    PrintAll:   Print all products
+    Range:      Check the range of ID's used
+    Quit:       Quit the program
+
+> add
+
+Adding a new product...
+> 113
+
+Adding name of product...
+> Tony Hawk
+
+ Name has been accepted.
+
+The product has been made!
+
+******************************
+ Stock Management Application 
+    App05: by Daniel Grace
+******************************
+
+    Add:        Add a new product
+    Remove:     Remove an old product
+    Deliver:    Deliver prdoucts
+    Sell:       Sell products
+    Search:     Search for a product
+    Check       Check the stock of items
+    Demo        Demo buying a number of items
+    Restock     Restock low items
+    PrintAll:   Print all products
+    Range:      Check the range of ID's used
+    Quit:       Quit the program
+
+> add
+
+Adding a new product...
+> 114
+
+Adding name of product...
+> Fast And Furious
+
+ Name has been accepted.
+
+The product has been made!
+
+******************************
+ Stock Management Application 
+    App05: by Daniel Grace
+******************************
+
+    Add:        Add a new product
+    Remove:     Remove an old product
+    Deliver:    Deliver prdoucts
+    Sell:       Sell products
+    Search:     Search for a product
+    Check       Check the stock of items
+    Demo        Demo buying a number of items
+    Restock     Restock low items
+    PrintAll:   Print all products
+    Range:      Check the range of ID's used
+    Quit:       Quit the program
+
+> add
+
+Adding a new product...
+> 115
+
+Adding name of product...
+> Naruto The Game
+
+ Name has been accepted.
+
+The product has been made!
+
+******************************
+ Stock Management Application 
+    App05: by Daniel Grace
+******************************
+
+    Add:        Add a new product
+    Remove:     Remove an old product
+    Deliver:    Deliver prdoucts
+    Sell:       Sell products
+    Search:     Search for a product
+    Check       Check the stock of items
+    Demo        Demo buying a number of items
+    Restock     Restock low items
+    PrintAll:   Print all products
+    Range:      Check the range of ID's used
+    Quit:       Quit the program
+
+> 

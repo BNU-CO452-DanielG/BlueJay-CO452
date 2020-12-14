@@ -1,0 +1,200 @@
+113: Tony Hawk stock level: 0
+115: Naruto The Game stock level: 0
+116: Godzilla stock level: 0
+
+
+******************************
+ Stock Management Application 
+    App05: by Daniel Grace
+******************************
+
+    Add:        Add a new product
+    Remove:     Remove an old product
+    Deliver:    Deliver prdoucts
+    Sell:       Sell products
+    Search:     Search for a product
+    Check       Check the stock of items
+    Demo        Demo buying a number of items
+    Restock     Restock low items
+    PrintAll:   Print all products
+    Range:      Check the range of ID's used
+    Quit:       Quit the program
+
+> deliver
+
+Delivering a product:
+Please enter the ID: 
+> 113
+Please enter the amount to be delivered:
+> 8
+Prodcut Delievered: 113: Tony Hawk stock level: 8
+
+******************************
+ Stock Management Application 
+    App05: by Daniel Grace
+******************************
+
+    Add:        Add a new product
+    Remove:     Remove an old product
+    Deliver:    Deliver prdoucts
+    Sell:       Sell products
+    Search:     Search for a product
+    Check       Check the stock of items
+    Demo        Demo buying a number of items
+    Restock     Restock low items
+    PrintAll:   Print all products
+    Range:      Check the range of ID's used
+    Quit:       Quit the program
+
+> deliver
+
+Delivering a product:
+Please enter the ID: 
+> 106
+Please enter the amount to be delivered:
+> -60
+Attempt to restock Call Of Duty with a negative amount: -60
+Prodcut Delievered: 106: Call Of Duty stock level: 0
+
+******************************
+ Stock Management Application 
+    App05: by Daniel Grace
+******************************
+
+    Add:        Add a new product
+    Remove:     Remove an old product
+    Deliver:    Deliver prdoucts
+    Sell:       Sell products
+    Search:     Search for a product
+    Check       Check the stock of items
+    Demo        Demo buying a number of items
+    Restock     Restock low items
+    PrintAll:   Print all products
+    Range:      Check the range of ID's used
+    Quit:       Quit the program
+
+> sell
+
+Selling products:
+Please enter the ID: 
+> 104
+Please enter the amount to be sold:
+> 3
+104: Assassin's Creed stock level: 0
+104: Assassin's Creed stock level: 0
+
+******************************
+ Stock Management Application 
+    App05: by Daniel Grace
+******************************
+
+    Add:        Add a new product
+    Remove:     Remove an old product
+    Deliver:    Deliver prdoucts
+    Sell:       Sell products
+    Search:     Search for a product
+    Check       Check the stock of items
+    Demo        Demo buying a number of items
+    Restock     Restock low items
+    PrintAll:   Print all products
+    Range:      Check the range of ID's used
+    Quit:       Quit the program
+
+> demo
+Delievering:
+Prodcut Delievered: 100: World Of Warcraft stock level: 2
+Prodcut Delievered: 101: Final Fantasy 14 stock level: 7
+Prodcut Delievered: 102: Star Wars The Old Republic stock level: 3
+Prodcut Delievered: 103: Destiny 2 stock level: 1
+Prodcut Delievered: 104: Assassin's Creed stock level: 6
+Prodcut Delievered: 105: Grand Theft Auto 5 stock level: 4
+Prodcut Delievered: 106: Call Of Duty stock level: 2
+Prodcut Delievered: 107: Black Desert Online stock level: 1
+Prodcut Delievered: 108: NBA2k20 stock level: 5
+Prodcut Delievered: 109: Fifa 20 stock level: 6
+Prodcut Delievered: 110: Battlefield 4 stock level: 5
+
+******************************
+ Stock Management Application 
+    App05: by Daniel Grace
+******************************
+
+    Add:        Add a new product
+    Remove:     Remove an old product
+    Deliver:    Deliver prdoucts
+    Sell:       Sell products
+    Search:     Search for a product
+    Check       Check the stock of items
+    Demo        Demo buying a number of items
+    Restock     Restock low items
+    PrintAll:   Print all products
+    Range:      Check the range of ID's used
+    Quit:       Quit the program
+
+> sell
+
+Selling products:
+Please enter the ID: 
+> 104
+Please enter the amount to be sold:
+> 3
+104: Assassin's Creed stock level: 6
+104: Assassin's Creed stock level: 3
+
+******************************
+ Stock Management Application 
+    App05: by Daniel Grace
+******************************
+
+    Add:        Add a new product
+    Remove:     Remove an old product
+    Deliver:    Deliver prdoucts
+    Sell:       Sell products
+    Search:     Search for a product
+    Check       Check the stock of items
+    Demo        Demo buying a number of items
+    Restock     Restock low items
+    PrintAll:   Print all products
+    Range:      Check the range of ID's used
+    Quit:       Quit the program
+
+> sell
+
+Selling products:
+Please enter the ID: 
+> 109
+Please enter the amount to be sold:
+> 30
+109: Fifa 20 stock level: 6
+109: Fifa 20 stock level: 0
+
+******************************
+ Stock Management Application 
+    App05: by Daniel Grace
+******************************
+
+    Add:        Add a new product
+    Remove:     Remove an old product
+    Deliver:    Deliver prdoucts
+    Sell:       Sell products
+    Search:     Search for a product
+    Check       Check the stock of items
+    Demo        Demo buying a number of items
+    Restock     Restock low items
+    PrintAll:   Print all products
+    Range:      Check the range of ID's used
+    Quit:       Quit the program
+
+> sell
+
+Selling products:
+Please enter the ID: 
+> 103
+Please enter the amount to be sold:
+> -60
+
+This is an invalid amount, try again.
+
+Selling products:
+Please enter the ID: 
+> 

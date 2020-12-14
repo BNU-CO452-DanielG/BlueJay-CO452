@@ -1,0 +1,200 @@
+
+******************************
+ Stock Management Application 
+    App05: by Daniel Grace
+******************************
+
+    Add:        Add a new product
+    Remove:     Remove an old product
+    Deliver:    Deliver prdoucts
+    Sell:       Sell products
+    Search:     Search for a product
+    Check       Check the stock of items
+    Demo        Demo buying a number of items
+    Restock     Restock low items
+    PrintAll:   Print all products
+    Range:      Check the range of ID's used
+    Quit:       Quit the program
+
+> add
+
+Adding a new product...
+> 114
+
+Adding name of product...
+> Fast And Furious
+
+ Name has been accepted.
+
+The product has been made!
+
+******************************
+ Stock Management Application 
+    App05: by Daniel Grace
+******************************
+
+    Add:        Add a new product
+    Remove:     Remove an old product
+    Deliver:    Deliver prdoucts
+    Sell:       Sell products
+    Search:     Search for a product
+    Check       Check the stock of items
+    Demo        Demo buying a number of items
+    Restock     Restock low items
+    PrintAll:   Print all products
+    Range:      Check the range of ID's used
+    Quit:       Quit the program
+
+> add
+
+Adding a new product...
+> 115
+
+Adding name of product...
+> Naruto The Game
+
+ Name has been accepted.
+
+The product has been made!
+
+******************************
+ Stock Management Application 
+    App05: by Daniel Grace
+******************************
+
+    Add:        Add a new product
+    Remove:     Remove an old product
+    Deliver:    Deliver prdoucts
+    Sell:       Sell products
+    Search:     Search for a product
+    Check       Check the stock of items
+    Demo        Demo buying a number of items
+    Restock     Restock low items
+    PrintAll:   Print all products
+    Range:      Check the range of ID's used
+    Quit:       Quit the program
+
+> add
+
+Adding a new product...
+> 109
+
+ The product is exists. Please choose another.
+> 115
+
+ The product is exists. Please choose another.
+> 116
+
+Adding name of product...
+> Godzilla
+
+ Name has been accepted.
+
+The product has been made!
+
+******************************
+ Stock Management Application 
+    App05: by Daniel Grace
+******************************
+
+    Add:        Add a new product
+    Remove:     Remove an old product
+    Deliver:    Deliver prdoucts
+    Sell:       Sell products
+    Search:     Search for a product
+    Check       Check the stock of items
+    Demo        Demo buying a number of items
+    Restock     Restock low items
+    PrintAll:   Print all products
+    Range:      Check the range of ID's used
+    Quit:       Quit the program
+
+> remove
+Removing a product:
+
+Please enter the ID: 
+> 114
+
+******************************
+ Stock Management Application 
+    App05: by Daniel Grace
+******************************
+
+    Add:        Add a new product
+    Remove:     Remove an old product
+    Deliver:    Deliver prdoucts
+    Sell:       Sell products
+    Search:     Search for a product
+    Check       Check the stock of items
+    Demo        Demo buying a number of items
+    Restock     Restock low items
+    PrintAll:   Print all products
+    Range:      Check the range of ID's used
+    Quit:       Quit the program
+
+> remove
+Removing a product:
+
+Please enter the ID: 
+> 200
+This product doesn't exist, please try again.
+Unable to find product
+
+******************************
+ Stock Management Application 
+    App05: by Daniel Grace
+******************************
+
+    Add:        Add a new product
+    Remove:     Remove an old product
+    Deliver:    Deliver prdoucts
+    Sell:       Sell products
+    Search:     Search for a product
+    Check       Check the stock of items
+    Demo        Demo buying a number of items
+    Restock     Restock low items
+    PrintAll:   Print all products
+    Range:      Check the range of ID's used
+    Quit:       Quit the program
+
+> printall
+
+Grace's Stock List
+====================
+
+100: World Of Warcraft stock level: 0
+101: Final Fantasy 14 stock level: 0
+102: Star Wars The Old Republic stock level: 0
+103: Destiny 2 stock level: 0
+104: Assassin's Creed stock level: 0
+105: Grand Theft Auto 5 stock level: 0
+106: Call Of Duty stock level: 0
+107: Black Desert Online stock level: 0
+108: NBA2k20 stock level: 0
+109: Fifa 20 stock level: 0
+110: Battlefield 4 stock level: 0
+111: NBA Jam stock level: 0
+112: Skyrim stock level: 0
+113: Tony Hawk stock level: 0
+115: Naruto The Game stock level: 0
+116: Godzilla stock level: 0
+
+
+******************************
+ Stock Management Application 
+    App05: by Daniel Grace
+******************************
+
+    Add:        Add a new product
+    Remove:     Remove an old product
+    Deliver:    Deliver prdoucts
+    Sell:       Sell products
+    Search:     Search for a product
+    Check       Check the stock of items
+    Demo        Demo buying a number of items
+    Restock     Restock low items
+    PrintAll:   Print all products
+    Range:      Check the range of ID's used
+    Quit:       Quit the program
+
+> 

@@ -39,6 +39,10 @@ public class InputReader
         return inputLine;
     }
     
+    /**
+     * Parses the string into an int, if it isn't
+     * a number then try again.
+     */
     public int getInt()
     {
         int number = 0;

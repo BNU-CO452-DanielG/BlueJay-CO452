@@ -11,6 +11,8 @@ public class StockManager
 {
     // A list of the products.
     private ArrayList<Product> stock;
+    private InputReader input;
+    private StockApp app;
     List <Product> listClone = new ArrayList<Product>();
     
     private String name;
@@ -33,7 +35,7 @@ public class StockManager
     }
     
     /**
-     * Finds product and reeplaces the name. 
+     * Finds product and replaces the name. 
      */
     public void renameProduct(int id, String replacementName)
     {
@@ -216,12 +218,12 @@ public class StockManager
     {
         Product product = findProduct(id);
         
-        if(product != null) 
-        {
+       if(product != null) 
+         {
             printProduct(id);
             product.sellQuantity(amount);
             printProduct(id);
-        }
+         }
     }    
     
     public void refillStock()

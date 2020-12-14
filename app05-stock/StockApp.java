@@ -11,18 +11,21 @@ import java.util.List;
  */
 public class StockApp
 {
+    //Make the list and the clone
     private ArrayList<Product> stock;
     List <Product> listClone = new ArrayList<Product>();
-    // Use to get user input
+    // Use to get user input 
     private InputReader input;
     
+    //Get other classes
     private StockManager manager;
-    
     private StockDemo oldStock;
     
+    //Set the min/max limit
     private final int idLimit = 100;
     private int idMax = 110;
     
+    //Declaring variables
     private int id = 0;
     private String name;
     
@@ -41,7 +44,6 @@ public class StockApp
      */
     public void run()
     {
-        printHeading();
         getMenuChoice();
     }
     
@@ -72,6 +74,10 @@ public class StockApp
     }
     
    
+    /**
+     * Changes the choice to lower case, and then
+     * takes the user to the correct menus.
+     */
     private void executeMenuChoice(String choice)
     {
         choice.toLowerCase();
@@ -89,7 +95,7 @@ public class StockApp
         }
         else if (choice.equals ("deliver"))
         {
-            delieverProduct();
+            deliverProduct();
         }
         else if (choice.equals ("sell"))
         {
@@ -118,13 +124,18 @@ public class StockApp
         }
     }
     
+    /**
+     * Activates demo deliver for ease of access.
+     */
     private void demoDeliever()
     {
         oldStock.demoDeliever();
     }
     
      /**
-     * 
+     * Get's the users ID and name. If it passes
+     * then the product is made with the max ID's
+     * increasing.
      */
     private void addProduct(int id)
     {
@@ -134,9 +145,11 @@ public class StockApp
         System.out.println("\nAdding a new product...");
                
         newId = createNewID();
+        System.out.println("\nAdding name of product...");
         newName = createNewName();
         
         Product product = new Product(newId, newName);
+        System.out.println("\nThe product has been made!");
         
         idMax = idMax + 1;
         manager.addProduct(product);
@@ -159,6 +172,10 @@ public class StockApp
         manager.removeProduct(id);
     }
     
+    /**
+     * Get's the users input to lower case and
+     * searches.
+     */
     private void searchProduct(String name)
     {
         System.out.println("Searching for a product...");
@@ -171,6 +188,10 @@ public class StockApp
         
     }
     
+    /**
+     * Gets an ID and checks if the ID exists
+     * or it is higher/lower than the limit.
+     */
     private Integer createNewID()
     {
         id = input.getInt();
@@ -190,42 +211,60 @@ public class StockApp
         return id;
     }
     
+    /**
+     * Checks if name is greater than 0, and then
+     * and then accepts.
+     */
     private String createNewName()
     {
         name = input.getInput();
         while(name.length() == 0)
         {
-            System.out.println("\n Please write type a name..");
+            System.out.println("\n Please enter a name..");
             name = input.getInput();
         }
         System.out.println("\n Name has been accepted.");
         return name;
     }
     
-    private void delieverProduct()
+    /**
+     * Get's the user ID and then the amount
+     * to be delivered.
+     */
+    private void deliverProduct()
     {
-        System.out.println("Delivering a product:");
+        System.out.println("\nDelivering a product:");
         System.out.println("Please enter the ID: ");
         String value = input.getInput();
         int id = Integer.parseInt(value);
         System.out.println("Please enter the amount to be delivered:");
         String choice = input.getInput();
         int amount = Integer.parseInt(choice);
-        
         manager.delivery(id, amount);
     }
     
+    /**
+     * Gets the ID and the amount to be sold. If the 
+     * amount is smaller than zero restart.
+     */
     private void sellProduct()
     {
-        System.out.println("Selling products:");
+        System.out.println("\nSelling products:");
         System.out.println("Please enter the ID: ");
         String value = input.getInput();
         int id = Integer.parseInt(value);
         System.out.println("Please enter the amount to be sold:");
         String choice = input.getInput();
         int amount = Integer.parseInt(choice);
-        
-        manager.sellProduct(id, amount);
+        if(amount < 0)
+        {
+            System.out.println("\nThis is an invalid amount, try again.");
+            sellProduct();
+        }
+        else
+        {
+            manager.sellProduct(id, amount);
+        }
     }
 
     /**

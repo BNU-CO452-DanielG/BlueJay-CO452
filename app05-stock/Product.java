@@ -99,7 +99,7 @@ public class Product
         else 
         {
             System.out.println("Attempt to restock " + name +
-                               " with a non-positive amount: " + amount);
+                               " with a negative amount: " + amount);
         }
     }
 
@@ -109,7 +109,11 @@ public class Product
      */
     public void sellQuantity(int amount)
     {
-        if(quantity > 0) 
+        if (quantity < amount)
+        {
+            quantity = 0;
+        }
+        else if(quantity > 0) 
         {
             quantity = quantity - amount;
         }
