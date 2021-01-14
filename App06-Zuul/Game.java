@@ -94,6 +94,9 @@ public class Game
             case HELP:
                 printHelp();
                 break;
+                
+            case GET:
+                getItem(command);
 
             case GO:
                 goRoom(command);
@@ -104,6 +107,28 @@ public class Game
                 break;
         }
         return wantToQuit;
+    }
+    
+        private void getItem(Command command) 
+    {
+        if(!command.hasSecondWord()) 
+        {
+            // if there is no second word, we don't know where to go...
+            System.out.println("Get what?");
+            return;
+        }
+
+        String item = command.getSecondWord();
+
+        // Try to leave current room.
+        Items newItem = currentRoom.getItem(item);
+
+        if (newItem == null) {
+            System.out.println("That item is not here!");
+        }
+        else {
+            inventory.add(newItem);
+        }
     }
 
     // implementations of user commands:

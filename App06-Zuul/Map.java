@@ -45,6 +45,7 @@ public class Map
         office.setExit("west", lab);
         
         tennis.setExit("south", outside);
+        tennis.setItem(new Items("Racket"));
 
         startRoom = outside;  // start game outside
     }

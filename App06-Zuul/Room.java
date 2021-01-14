@@ -96,6 +96,8 @@ public class Room
         {
             returnString += " " + exit;
         }
+        returnString += "\n Items in the room:\n";
+        returnString += getRoomItems();
         return returnString;
     }
 
@@ -113,6 +115,17 @@ public class Room
     public Items getItem(int index)
     {
         return items.get(index);
+    }
+    
+    public Items getItem(String itemName)
+    {
+        for (int i = 0; i < items.size(); i++) 
+        {
+            if (items.get(i).getDescription().equals(itemName))
+            {
+                return items.get(i);
+            }
+        } return null;
     }
     
     public void setItem(Items newitem) 
