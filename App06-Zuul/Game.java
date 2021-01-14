@@ -1,3 +1,4 @@
+import java.util.ArrayList;
 /**
  *  This class is the main class of the "World of Zuul" application. 
  *  "World of Zuul" is a very simple, text based adventure game.  Users 
@@ -22,6 +23,7 @@ public class Game
     private Parser parser;
     private Room currentRoom;
     private Map map;
+    ArrayList<Items> inventory = new ArrayList<Items>();
         
     /**
      * Create the game and initialise its internal map.
@@ -39,6 +41,7 @@ public class Game
     public void play() 
     {            
         printWelcome();
+        inventory.add(new Items("Computer"));
 
         // Enter the main command loop.  Here we repeatedly read commands and
         // execute them until the game is over.
@@ -83,6 +86,10 @@ public class Game
             case UNKNOWN:
                 System.out.println("I don't know what you mean...");
                 break;
+                
+            case INVENTORY:
+                printInventory();
+            
 
             case HELP:
                 printHelp();
@@ -101,6 +108,17 @@ public class Game
 
     // implementations of user commands:
 
+    private void printInventory()
+    {
+        String output = "";
+        for (int i = 0; i < inventory.size(); i++)
+        {
+           output += inventory.get(i).getDescription() + "  "; 
+        }
+        System.out.println("You are carrying:");
+        System.out.println(output);
+    }
+    
     /**
      * Print out some help information.
      * Here we print some stupid, cryptic message and a list of the 

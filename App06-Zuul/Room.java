@@ -1,6 +1,7 @@
+import javax.lang.model.element.Name;
+import java.util.ArrayList;
 import java.util.Set;
 import java.util.HashMap;
-import java.util.Iterator;
 
 /**
  * Class Room - a room in an adventure game.
@@ -16,21 +17,36 @@ import java.util.Iterator;
  * @version 2016.02.29
  */
 
-public class Room 
+public class Room
 {
+    private String name;
     private String description;
-    private HashMap<String, Room> exits;        // stores exits of this room.
+
+
+    //private String description;
+    // String is the key to a room in that direction
+    // east would be an exit that goes to the Room
+    private HashMap<String, Room> exits;
+    
+    ArrayList<Items> items = new ArrayList<Items>();
 
     /**
      * Create a room described "description". Initially, it has
      * no exits. "description" is something like "a kitchen" or
      * "an open court yard".
-     * @param description The room's description.
+     * @param item
      */
-    public Room(String description) 
+    public Room(String description)
     {
+        name = this.getClass().getSimpleName(); //use the name of the class as the name of the location
+
         this.description = description;
         exits = new HashMap<>();
+    }
+
+    public String getName()
+    {
+        return name;
     }
 
     /**
@@ -38,7 +54,7 @@ public class Room
      * @param direction The direction of the exit.
      * @param neighbor  The room to which the exit leads.
      */
-    public void setExit(String direction, Room neighbor) 
+    public void setExit(String direction, Room neighbor)
     {
         exits.put(direction, neighbor);
     }
@@ -59,8 +75,11 @@ public class Room
      * @return A long description of this room
      */
     public String getLongDescription()
+
     {
-        return "You are " + description + ".\n" + getExitString();
+
+        return "You are " + description + " " + description +
+                ".\n" + getExitString();
     }
 
     /**
@@ -86,8 +105,29 @@ public class Room
      * @param direction The exit's direction.
      * @return The room in the given direction.
      */
-    public Room getExit(String direction) 
+    public Room getExit(String direction)
     {
         return exits.get(direction);
     }
+    
+    public Items getItem(int index)
+    {
+        return items.get(index);
+    }
+    
+    public void setItem(Items newitem) 
+    {
+        items.add(newitem);
+    }
+    
+    public String getRoomItems()
+    {
+        String output = "";
+        for (int i = 0; i < items.size(); i++)
+        {
+           output += items.get(i).getDescription() + "  "; 
+        }
+        return output;
+    }
+
 }
