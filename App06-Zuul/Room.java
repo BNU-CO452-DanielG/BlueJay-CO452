@@ -101,6 +101,7 @@ public class Room
         return returnString;
     }
 
+    
     /**
      * Return the room that is reached if we go from this room in direction
      * "direction". If there is no room in that direction, return null.

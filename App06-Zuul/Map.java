@@ -9,6 +9,7 @@ public class Map
 {/**
   * Create all the rooms and link their exits together.
   */
+    private String name;
     private Game game;
     private Room startRoom;
     Room outside, theater, pub, lab, office, tennis;
@@ -21,7 +22,6 @@ public class Map
     
     private void createRooms()
     {
-     
         // create the rooms
         outside = new Room("outside the main entrance of the university");
         theater = new Room("in a lecture theater");
@@ -38,6 +38,7 @@ public class Map
         theater.setExit("west", outside);
 
         pub.setExit("east", outside);
+        
 
         lab.setExit("north", outside);
         lab.setExit("east", office);
@@ -46,9 +47,11 @@ public class Map
         
         tennis.setExit("south", outside);
         tennis.setItem(new Items("Racket"));
+        
 
         startRoom = outside;  // start game outside
     }
+    
     public Room getStartRoom()
     {
         return startRoom;

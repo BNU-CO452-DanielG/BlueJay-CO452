@@ -1,3 +1,4 @@
+
 import java.util.ArrayList;
 /**
  *  This class is the main class of the "World of Zuul" application. 
@@ -20,6 +21,7 @@ import java.util.ArrayList;
 
 public class Game 
 {
+    private String name;
     private Parser parser;
     private Room currentRoom;
     private Map map;
@@ -89,7 +91,7 @@ public class Game
                 
             case INVENTORY:
                 printInventory();
-            
+                break;
 
             case HELP:
                 printHelp();
@@ -97,10 +99,15 @@ public class Game
                 
             case GET:
                 getItem(command);
+                break;
 
             case GO:
                 goRoom(command);
                 break;
+                
+            case USE: 
+                 checkItem(command);
+                 break;
 
             case QUIT:
                 wantToQuit = quit(command);
@@ -128,6 +135,28 @@ public class Game
         }
         else {
             inventory.add(newItem);
+        }
+    }
+    
+    public void checkItem(Command command)
+    {
+        if(!command.hasSecondWord()) 
+        {
+            // if there is no second word, we don't know where to go...
+            System.out.println("Use what?");
+            return;
+        }
+
+        String item = command.getSecondWord();
+
+        // Try to leave current room.
+        Items newItem = currentRoom.getItem(item);
+
+          if (newItem == null) {
+            System.out.println("That item is not here!");
+        }
+        else {
+            System.out.println("That works apparently");
         }
     }
 
