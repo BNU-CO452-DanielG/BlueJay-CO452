@@ -34,6 +34,7 @@ public class Game
         map = new Map();
         currentRoom = map.getStartRoom();
         parser = new Parser();
+        user = new Player("Danny");
     }
 
         /**
@@ -90,6 +91,10 @@ public class Game
 
             case HELP:
                 printHelp();
+                break;
+                
+            case GET:
+                grabItem();
                 break;
                 
 
@@ -149,7 +154,16 @@ public class Game
         }
     }
     
-    
+    private void grabItem()
+    {
+        System.out.println("\nYou have taken the " +
+                currentRoom.getroomsItem() +"\n");
+
+        user.getItem(currentRoom.getroomsItem());
+        currentRoom.removeContainedItem();
+        user.printUserInfo();
+
+    }
 
     /** 
      * "Quit" was entered. Check the rest of the command to see

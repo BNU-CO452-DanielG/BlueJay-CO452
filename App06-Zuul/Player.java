@@ -1,3 +1,4 @@
+import java.util.ArrayList;
 /**
  * Write a description of class Player here.
  *
@@ -10,7 +11,7 @@ public class Player
     public int score;
     private int count;
     private int stamina;
-    
+    public ArrayList<Items> inventory = new ArrayList<Items>();
     /**
      * added another comment
      * @param name
@@ -18,6 +19,11 @@ public class Player
     public Player(String Name)
     {
         this.name = name;
+    }
+    
+        public void getItem(Items item)
+    {
+        inventory.add(item);
     }
     
     public int getScore()
@@ -54,4 +60,8 @@ public class Player
         score = score - 2;
     }
     
+    public void printUserInfo()
+    {
+        System.out.println("This is the user information: ");
+    }
 }

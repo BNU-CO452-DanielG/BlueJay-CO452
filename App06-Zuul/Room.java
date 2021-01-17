@@ -36,9 +36,10 @@ public class Room
      * "an open court yard".
      * @param item
      */
-    public Room(String description)
+    public Room(String description, Items item)
     {
         this.description = description;
+        roomsItem = item;
         exits = new HashMap<>();
     }
 
@@ -109,12 +110,12 @@ public class Room
         return requiredItem;
     }
     
-        public void setContainedItem(Items item)
+        public void setroomsItem(Items item)
     {
         roomsItem = item;
     }
 
-    public Items getContainedItem()
+    public Items getroomsItem()
     {
         return roomsItem;
     }

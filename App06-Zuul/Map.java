@@ -30,14 +30,14 @@ public class Map
     
     private void createRooms()
     {
-      caveEnterance = new Room("In a dark cave.. many options lie ahead of you..");
-      noteCorridor = new Room("There's something in the north... Something intimidating.. Don't go there!");
-      gameOver = new Room("You were warned...");
-      oasis = new Room("A break from the dark, and a sword laying in front of a large tree.");
-      miningSite = new Room("A abandoned mining site.. Is that.. Explosives!?");
-      corridor = new Room("You move forward barely seeing your feet..");
-      rockWall = new Room("A large rock wall.. How do you break this?...");
-      treasure = new Room("You found the treasure!");
+      caveEnterance = new Room("In a dark cave.. many options lie ahead of you..", Items.NONE);
+      noteCorridor = new Room("There's something in the north... Something intimidating.. Don't go there!", Items.NONE);
+      gameOver = new Room("You were warned...", Items.NONE);
+      oasis = new Room("A break from the dark, and a sword laying in front of a large tree.", Items.SWORD);
+      miningSite = new Room("A abandoned mining site.. Is that.. Explosives!?", Items.EXPLOSIVES);
+      corridor = new Room("You move forward barely seeing your feet..", Items.TORCH);
+      rockWall = new Room("A large rock wall.. How do you break this?...", Items.NONE);
+      treasure = new Room("You found the treasure!", Items.NONE);
       
       startRoom = caveEnterance;
     }
