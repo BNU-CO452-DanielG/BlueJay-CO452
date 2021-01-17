@@ -1,5 +1,3 @@
-
-import java.util.ArrayList;
 /**
  *  This class is the main class of the "World of Zuul" application. 
  *  "World of Zuul" is a very simple, text based adventure game.  Users 
@@ -21,11 +19,10 @@ import java.util.ArrayList;
 
 public class Game 
 {
-    private String name;
+    private Items items;
     private Parser parser;
     private Room currentRoom;
     private Map map;
-    ArrayList<Items> inventory = new ArrayList<Items>();
         
     /**
      * Create the game and initialise its internal map.
@@ -43,7 +40,6 @@ public class Game
     public void play() 
     {            
         printWelcome();
-        inventory.add(new Items("Computer"));
 
         // Enter the main command loop.  Here we repeatedly read commands and
         // execute them until the game is over.
@@ -89,25 +85,16 @@ public class Game
                 System.out.println("I don't know what you mean...");
                 break;
                 
-            case INVENTORY:
-                printInventory();
-                break;
 
             case HELP:
                 printHelp();
                 break;
                 
-            case GET:
-                getItem(command);
-                break;
 
             case GO:
                 goRoom(command);
                 break;
                 
-            case USE: 
-                 checkItem(command);
-                 break;
 
             case QUIT:
                 wantToQuit = quit(command);
@@ -115,63 +102,9 @@ public class Game
         }
         return wantToQuit;
     }
-    
-        private void getItem(Command command) 
-    {
-        if(!command.hasSecondWord()) 
-        {
-            // if there is no second word, we don't know where to go...
-            System.out.println("Get what?");
-            return;
-        }
-
-        String item = command.getSecondWord();
-
-        // Try to leave current room.
-        Items newItem = currentRoom.getItem(item);
-
-        if (newItem == null) {
-            System.out.println("That item is not here!");
-        }
-        else {
-            inventory.add(newItem);
-        }
-    }
-    
-    public void checkItem(Command command)
-    {
-        if(!command.hasSecondWord()) 
-        {
-            // if there is no second word, we don't know where to go...
-            System.out.println("Use what?");
-            return;
-        }
-
-        String item = command.getSecondWord();
-
-        // Try to leave current room.
-        Items newItem = currentRoom.getItem(item);
-
-          if (newItem == null) {
-            System.out.println("That item is not here!");
-        }
-        else {
-            System.out.println("That works apparently");
-        }
-    }
+     
 
     // implementations of user commands:
-
-    private void printInventory()
-    {
-        String output = "";
-        for (int i = 0; i < inventory.size(); i++)
-        {
-           output += inventory.get(i).getDescription() + "  "; 
-        }
-        System.out.println("You are carrying:");
-        System.out.println(output);
-    }
     
     /**
      * Print out some help information.
@@ -213,6 +146,8 @@ public class Game
             System.out.println(currentRoom.getLongDescription());
         }
     }
+    
+    
 
     /** 
      * "Quit" was entered. Check the rest of the command to see
