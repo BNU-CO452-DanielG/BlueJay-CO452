@@ -1,5 +1,5 @@
 public enum Items
 {
-    NONE, EXPLOSIVES, SWORD, TORCH
+    COURAGE, EXPLOSIVES, SWORD, TORCH, LIGHTER
 
 }

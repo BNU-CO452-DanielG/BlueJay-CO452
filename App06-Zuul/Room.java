@@ -122,6 +122,6 @@ public class Room
 
     public void removeContainedItem()
     {
-        roomsItem = Items.NONE;
+        roomsItem = Items.COURAGE;
     }
 }

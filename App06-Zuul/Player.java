@@ -21,6 +21,16 @@ public class Player
         this.name = name;
     }
     
+        public boolean hasItem(Items targetItem)
+    {
+        for (Items item : inventory)
+        {
+            if (item == targetItem)
+                return true;
+        }
+        return false;
+    }
+    
         public void getItem(Items item)
     {
         inventory.add(item);
@@ -31,14 +41,14 @@ public class Player
         return score;
     }
     
-    public void setScore()
+    public int setScore()
     {
-        score = 100;
+        return score = 25;
     }
     
-    public void setStamina()
+    public int setStamina()
     {
-        stamina = 50;
+        return stamina = 25;
     }
     
     public void decreaseScore(int amount)

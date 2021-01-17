@@ -19,6 +19,7 @@
 
 public class Game 
 {
+    private int stamina;
     private int score;
     private Player user;
     private Items items;
@@ -35,6 +36,8 @@ public class Game
         currentRoom = map.getStartRoom();
         parser = new Parser();
         user = new Player("Danny");
+        score = user.setScore();
+        stamina = user.setStamina();
     }
 
         /**
@@ -67,6 +70,7 @@ public class Game
         System.out.println("Welcome to the World of Zuul!");
         System.out.println("World of Zuul is a new, incredibly boring adventure game.");
         System.out.println("Type '" + CommandWord.HELP + "' if you need help.");
+        System.out.println("Your aim is to reach the treasure.. You need to GET items to do so..");
         System.out.println();
         System.out.println(currentRoom.getLongDescription());
     }
@@ -121,10 +125,11 @@ public class Game
     private void printHelp() 
     {
         System.out.println("You are lost. You are alone. You wander");
-        System.out.println("around at the university.");
+        System.out.println("around the dank cave.");
         System.out.println();
         System.out.println("Your command words are:");
         parser.showCommands();
+        System.out.println("Your aim is to reach the treasure.. You need to GET items to do so..");
     }
 
     /** 
@@ -144,15 +149,10 @@ public class Game
 
         // Try to leave current room.
         Room nextRoom = currentRoom.getExit(direction);
-
-        if (nextRoom == null) {
-            System.out.println("There is no door!");
+        
+        goToRoom(nextRoom);
         }
-        else {
-            currentRoom = nextRoom;
-            System.out.println(currentRoom.getLongDescription());
-        }
-    }
+    
     
     private void grabItem()
     {
@@ -165,6 +165,39 @@ public class Game
 
     }
 
+    private void goToRoom(Room nextRoom)
+        {
+        if (nextRoom == null)
+        {
+            System.out.println("There is no door!");
+        }
+        else
+        {
+            if (user.hasItem(nextRoom.getRequiredItem()))
+            {
+                stamina = stamina - 1;
+                score = score - 1;
+                System.out.println("Your stamina: " + stamina + "\nYour points: " + score);
+                currentRoom = nextRoom;
+                System.out.println(currentRoom.getLongDescription());
+                if(stamina == 0)
+                {
+                    System.out.println("You've ran out of stamina! Better luck next time..");
+                    System.exit(0);
+                }
+            }
+            
+            
+            else {
+                System.out.println("You cannot enter this room because you do not have a " + nextRoom.getRequiredItem());
+
+            }
+
+        }
+    }
+    
+    
+    
     /** 
      * "Quit" was entered. Check the rest of the command to see
      * whether we really quit the game.
