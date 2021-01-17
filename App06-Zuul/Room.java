@@ -21,6 +21,9 @@ public class Room
 {
     private String name;
     private String description;
+    
+    private Items requiredItem;
+    private Items roomsItem;
 
     //private String description;
     // String is the key to a room in that direction
@@ -93,5 +96,31 @@ public class Room
             returnString += " " + exit;
         }
         return returnString;
+    }
+    
+    
+    public void setRequiredItem(Items requiredItem)
+    {
+        this.requiredItem = requiredItem;
+    }
+
+    public Items getRequiredItem()
+    {
+        return requiredItem;
+    }
+    
+        public void setContainedItem(Items item)
+    {
+        roomsItem = item;
+    }
+
+    public Items getContainedItem()
+    {
+        return roomsItem;
+    }
+
+    public void removeContainedItem()
+    {
+        roomsItem = Items.NONE;
     }
 }

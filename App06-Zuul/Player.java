@@ -1,4 +1,3 @@
-import java.util.ArrayList;
 /**
  * Write a description of class Player here.
  *
@@ -11,7 +10,6 @@ public class Player
     public int score;
     private int count;
     private int stamina;
-    private ArrayList <Items> itemList;
     
     /**
      * added another comment
@@ -20,7 +18,6 @@ public class Player
     public Player(String Name)
     {
         this.name = name;
-        score = 100;
     }
     
     public int getScore()
@@ -28,7 +25,7 @@ public class Player
         return score;
     }
     
-    public void resetScore()
+    public void setScore()
     {
         score = 100;
     }
@@ -45,6 +42,7 @@ public class Player
             score -= amount;
         } 
     }
+    
     public void setCount(int count)
     {
         this.count = count;

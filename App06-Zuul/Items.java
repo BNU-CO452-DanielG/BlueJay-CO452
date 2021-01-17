@@ -1,14 +1,5 @@
-public class Items
+public enum Items
 {
-    String description;
-    
-    public Items(String newdescription)
-    {
-        description = newdescription;
-    }
-    
-    public String getDescription()
-    {
-        return description;
-    }
+    NONE, EXPLOSIVES, SWORD, TORCH
+
 }

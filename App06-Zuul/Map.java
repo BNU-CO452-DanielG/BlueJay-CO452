@@ -17,6 +17,7 @@ public class Map
     private Room miningSite;
     private Room corridor;
     private Room rockWall;
+    private Room quizRoom;
     private Room treasure;
     
     ArrayList<Items> inventory = new ArrayList<Items>();
@@ -59,7 +60,15 @@ public class Map
         noteCorridor.setExit("east", oasis);
         noteCorridor.setExit("west", caveEnterance);
         
+        
         oasis.setExit("west", noteCorridor);
+    }
+    
+    private void setRequiredItems()
+    {
+        treasure.setRequiredItem(Items.EXPLOSIVES);
+        corridor.setRequiredItem(Items.SWORD);
+        gameOver.setRequiredItem(Items.TORCH);
     }
         
     public Room getStartRoom()

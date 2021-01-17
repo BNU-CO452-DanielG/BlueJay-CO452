@@ -19,6 +19,8 @@
 
 public class Game 
 {
+    private int score;
+    private Player user;
     private Items items;
     private Parser parser;
     private Room currentRoom;
