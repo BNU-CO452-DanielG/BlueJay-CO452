@@ -14,13 +14,16 @@
  * @author  Michael Kölling and David J. Barnes
  * @version 2016.02.29
  * 
- * Modified and extended by Your name
+ * Modified and extended by Daniel Grace
  */
 
 public class Game 
 {
+    //Stamina and score set here
     private int stamina;
     private int score;
+    private int minScore;
+    //Initalising other classes
     private Player user;
     private Items items;
     private Parser parser;
@@ -40,7 +43,7 @@ public class Game
         stamina = user.setStamina();
     }
 
-        /**
+     /**
      *  Main play routine.  Loops until end of play.
      */
     public void play() 
@@ -100,8 +103,11 @@ public class Game
             case GET:
                 grabItem();
                 break;
+            
+            case REST:
+                rest();
+                break;
                 
-
             case GO:
                 goRoom(command);
                 break;
@@ -153,7 +159,9 @@ public class Game
         goToRoom(nextRoom);
         }
     
-    
+    /**
+     * Grabs the avalible item in the room.
+     */
     private void grabItem()
     {
         System.out.println("\nYou have taken the " +
@@ -161,9 +169,15 @@ public class Game
 
         user.getItem(currentRoom.getroomsItem());
         currentRoom.removeContainedItem();
-        user.printUserInfo();
 
     }
+    
+    /**
+     * Checks if next room exists, then if the required item for the rooms does
+     * then decreases stamina and score. Prints them out and takes the user to
+     * the next room. If the stamina reaches 0 at this time the game ends. Otherwise
+     * displays error with the required item needed.
+     */
 
     private void goToRoom(Room nextRoom)
         {
@@ -176,7 +190,10 @@ public class Game
             if (user.hasItem(nextRoom.getRequiredItem()))
             {
                 stamina = stamina - 1;
-                score = score - 1;
+                if(score > 0)
+                {
+                    score = score - 1;
+                }
                 System.out.println("Your stamina: " + stamina + "\nYour points: " + score);
                 currentRoom = nextRoom;
                 System.out.println(currentRoom.getLongDescription());
@@ -197,6 +214,19 @@ public class Game
     }
     
     
+    /**
+     * Rest, gaining stamana.. but losing 4 score.
+     */
+    private void rest()
+    {
+        stamina = stamina + 5;
+        score = score - 4;
+        if(score < 0)
+        {
+            score = 0;
+        }
+        System.out.println("At the cost of 5 points, you gain 5 stamina: " + stamina);
+    }
     
     /** 
      * "Quit" was entered. Check the rest of the command to see

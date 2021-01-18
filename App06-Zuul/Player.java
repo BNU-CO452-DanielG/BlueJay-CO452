@@ -1,9 +1,8 @@
 import java.util.ArrayList;
 /**
- * Write a description of class Player here.
+ * The class for the player.
  *
- * @author (your name)
- * @version (a version number or a date)
+ * @author Daniel Grace
  */
 public class Player
 {
@@ -43,7 +42,7 @@ public class Player
     
     public int setScore()
     {
-        return score = 25;
+        return score = 45;
     }
     
     public int setStamina()
@@ -66,7 +65,7 @@ public class Player
     
     public void rest()
     {
-        stamina = stamina + 5;
+        stamina = stamina + 3;
         score = score - 2;
     }
     

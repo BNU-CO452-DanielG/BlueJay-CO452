@@ -14,6 +14,7 @@ import java.util.HashMap;
  * stores a reference to the neighboring room.
  * 
  * @author  Michael Kölling and David J. Barnes
+ * @modified Daniel Grace
  * @version 2016.02.29
  */
 
@@ -110,7 +111,7 @@ public class Room
         return requiredItem;
     }
     
-        public void setroomsItem(Items item)
+    public void setroomsItem(Items item)
     {
         roomsItem = item;
     }
